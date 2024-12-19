@@ -9,19 +9,10 @@
 
 
     <url>
-        <loc>https://copperbean51.github.io/2024/12/19/DETR/</loc>
+        <loc>https://copperbean51.github.io/categories/ML/</loc>
         <lastmod>2024-12-19T13:40:37.429Z</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/18/BEV/</loc>
-        <lastmod>2024-12-18T12:59:19.766Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
+        <priority>0.2</priority>
     </url>
 
 </urlset>
