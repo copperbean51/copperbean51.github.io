@@ -9,8 +9,24 @@
 
 
     <url>
-        <loc>https://copperbean51.github.io/2024/12/27/Add-Mermaind-into-Hexa/</loc>
-        <lastmod>2024-12-27T09:04:57.811Z</lastmod>
+        <loc>https://copperbean51.github.io/2024/12/27/create-hexo-website/</loc>
+        <lastmod>2024-12-27T12:29:29.899Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/27/add-mermaind/</loc>
+        <lastmod>2024-12-27T12:21:27.503Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/27/install-hexo/</loc>
+        <lastmod>2024-12-27T12:18:06.757Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +34,7 @@
 
     <url>
         <loc>https://copperbean51.github.io/2024/12/19/DETR/</loc>
-        <lastmod>2024-12-20T15:50:19.672Z</lastmod>
+        <lastmod>2024-12-27T10:36:52.656Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
