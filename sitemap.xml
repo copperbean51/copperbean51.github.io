@@ -4,17 +4,22 @@
 
     <sitemap>
         <loc>https://copperbean51.github.io/post-sitemap.xml</loc>
-        <lastmod>2024-12-27T12:29:29.899Z</lastmod>
+        <lastmod>2024-12-28T08:51:19.507Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://copperbean51.github.io/page-sitemap.xml</loc>
-        <lastmod>2024-12-27T12:28:42.881Z</lastmod>
+        <lastmod>2024-12-28T08:38:23.096Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://copperbean51.github.io/category-sitemap.xml</loc>
-        <lastmod>2024-12-27T12:29:29.899Z</lastmod>
+        <lastmod>2024-12-28T08:51:19.507Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>https://copperbean51.github.io/tag-sitemap.xml</loc>
+        <lastmod>2024-12-27T12:43:49.020Z</lastmod>
     </sitemap>
 
 </sitemapindex>
