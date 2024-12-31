@@ -9,64 +9,8 @@
 
 
     <url>
-        <loc>https://copperbean51.github.io/2024/12/31/edu-math/</loc>
-        <lastmod>2024-12-31T02:59:48.983Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/31/devcon-mmdet3d/</loc>
-        <lastmod>2024-12-31T02:29:46.434Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/27/create-hexo-website/</loc>
-        <lastmod>2024-12-31T02:05:08.787Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/30/vscode-devcon-1/</loc>
-        <lastmod>2024-12-31T01:56:44.083Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/28/basic-cnn-models/</loc>
-        <lastmod>2024-12-29T11:02:42.409Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/29/Math-Pythagoras/</loc>
-        <lastmod>2024-12-29T10:04:42.036Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/29/Math-Euclid/</loc>
-        <lastmod>2024-12-29T10:03:20.770Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/2024/12/28/basic-dl/</loc>
-        <lastmod>2024-12-29T08:56:35.752Z</lastmod>
+        <loc>https://copperbean51.github.io/2024/12/27/bevformer/</loc>
+        <lastmod>2024-12-31T03:32:25.267Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -74,15 +18,15 @@
 
     <url>
         <loc>https://copperbean51.github.io/2024/12/28/BEVDet/</loc>
-        <lastmod>2024-12-28T10:01:31.627Z</lastmod>
+        <lastmod>2024-12-31T03:31:41.163Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://copperbean51.github.io/2024/12/28/CaDDN/</loc>
-        <lastmod>2024-12-28T09:27:43.720Z</lastmod>
+        <loc>https://copperbean51.github.io/2024/12/28/basic-dl/</loc>
+        <lastmod>2024-12-31T03:31:39.079Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -90,7 +34,7 @@
 
     <url>
         <loc>https://copperbean51.github.io/2024/12/19/DETR/</loc>
-        <lastmod>2024-12-28T08:51:19.507Z</lastmod>
+        <lastmod>2024-12-31T03:31:31.392Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -98,15 +42,15 @@
 
     <url>
         <loc>https://copperbean51.github.io/2024/12/27/add-mermaind/</loc>
-        <lastmod>2024-12-27T13:21:17.442Z</lastmod>
+        <lastmod>2024-12-31T03:31:18.069Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://copperbean51.github.io/2024/12/27/bevformer/</loc>
-        <lastmod>2024-12-27T12:43:49.020Z</lastmod>
+        <loc>https://copperbean51.github.io/2024/12/27/create-hexo-website/</loc>
+        <lastmod>2024-12-31T03:31:09.567Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -114,7 +58,63 @@
 
     <url>
         <loc>https://copperbean51.github.io/2024/12/27/install-hexo/</loc>
-        <lastmod>2024-12-27T12:18:06.757Z</lastmod>
+        <lastmod>2024-12-31T03:31:01.872Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/28/basic-cnn-models/</loc>
+        <lastmod>2024-12-31T03:30:49.884Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/28/CaDDN/</loc>
+        <lastmod>2024-12-31T03:30:17.556Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/29/Math-Euclid/</loc>
+        <lastmod>2024-12-31T03:30:00.785Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/29/Math-Pythagoras/</loc>
+        <lastmod>2024-12-31T03:29:43.140Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/30/vscode-devcon-1/</loc>
+        <lastmod>2024-12-31T03:29:10.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/31/devcon-mmdet3d/</loc>
+        <lastmod>2024-12-31T03:28:41.272Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/2024/12/31/edu-math/</loc>
+        <lastmod>2024-12-31T03:27:23.644Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

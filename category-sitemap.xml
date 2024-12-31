@@ -9,29 +9,78 @@
 
 
     <url>
-        <loc>https://copperbean51.github.io/categories/Vscode/</loc>
-        <lastmod>2024-12-31T02:29:46.434Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/categories/Hexo/</loc>
-        <lastmod>2024-12-31T02:05:08.787Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://copperbean51.github.io/categories/Math/</loc>
-        <lastmod>2024-12-29T10:04:42.036Z</lastmod>
+        <loc>https://copperbean51.github.io/categories/ML/trans/</loc>
+        <lastmod>2024-12-31T03:32:25.267Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://copperbean51.github.io/categories/ML/</loc>
-        <lastmod>2024-12-28T10:01:31.627Z</lastmod>
+        <lastmod>2024-12-31T03:32:25.267Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/ML/Trans/</loc>
+        <lastmod>2024-12-31T03:31:41.163Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/ML/Cnn/</loc>
+        <lastmod>2024-12-31T03:31:39.079Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/Tools/Hexo/</loc>
+        <lastmod>2024-12-31T03:31:18.069Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/Tools/</loc>
+        <lastmod>2024-12-31T03:31:18.069Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/Thinking/Math/</loc>
+        <lastmod>2024-12-31T03:30:00.785Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/Thinking/</loc>
+        <lastmod>2024-12-31T03:30:00.785Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/Tools/Vscode/</loc>
+        <lastmod>2024-12-31T03:29:10.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/Edu/Math/</loc>
+        <lastmod>2024-12-31T03:27:23.644Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://copperbean51.github.io/categories/Edu/</loc>
+        <lastmod>2024-12-31T03:27:23.644Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
