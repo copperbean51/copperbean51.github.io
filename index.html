@@ -141,7 +141,27 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body class="is-3-column"><script type="text/javascript" src="/js/imaegoo/night.js"></script><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="index.html"><img src="/img/logo.png" alt="Copperbean" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="index.html">Home</a><a class="navbar-item" href="/blog">BLOG</a><a class="navbar-item" href="/algorithm">Algorithm</a><a class="navbar-item" href="/hexo">Hexo</a><a class="navbar-item" href="/math">Math</a><a class="navbar-item" href="/edu">Edu</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item search" title="検索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-10-tablet is-10-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-01-12T10:59:06.000Z" title="1/12/2025, 7:59:06 PM">2025-01-12</time>に投稿</span><span class="level-item"><time dateTime="2025-01-12T11:10:55.100Z" title="1/12/2025, 8:10:55 PM">2025-01-12</time>に更新</span><span class="level-item">3分で読む (約441語)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="2025/01/12/Raspberry-Pi%E3%81%A7Bluetooth%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%92%E9%B3%B4%E3%82%89%E3%81%99/">Raspberry PiでBluetoothスピーカーを鳴らす</a></p><div class="content"><p>This text is also text! <!-- New line here... --></p>
+</style></head><body class="is-3-column"><script type="text/javascript" src="/js/imaegoo/night.js"></script><canvas id="universe"></canvas><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="index.html"><img src="/img/logo.png" alt="Copperbean" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="index.html">Home</a><a class="navbar-item" href="/blog">BLOG</a><a class="navbar-item" href="/algorithm">Algorithm</a><a class="navbar-item" href="/hexo">Hexo</a><a class="navbar-item" href="/math">Math</a><a class="navbar-item" href="/edu">Edu</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item night" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a><a class="navbar-item search" title="検索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-10-tablet is-10-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-01-12T11:14:38.000Z" title="1/12/2025, 8:14:38 PM">2025-01-12</time>に投稿</span><span class="level-item"><time dateTime="2025-01-12T11:20:42.441Z" title="1/12/2025, 8:20:42 PM">2025-01-12</time>に更新</span><span class="level-item"><a class="link-muted" href="categories/Raspebrry-Pi/">Raspebrry-Pi</a></span><span class="level-item">1分で読む (約165語)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="2025/01/12/Raspberry-Pi%E3%81%A7USB%E3%83%9E%E3%82%A4%E3%82%AF%E3%82%92%E5%8F%96%E3%82%8A%E4%BB%98%E3%81%91%E3%81%A6%E9%9F%B3%E5%A3%B0%E3%82%92%E9%8C%B2%E9%9F%B3%E3%81%95%E3%81%9B%E3%82%8B/">Raspberry PiでUSBマイクを取り付けて音声を録音させる</a></p><div class="content"><p>This text is also text! <!-- New line here... --></p>
+<h1 id="Preparation">Preparation</h1>
+<hr>
+<p>usb マイクを差し入れる前後に lsusbコマンドで出力を確認します。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">lsusb</span></span><br></pre></td></tr></table></figure>
+<p>以下arecord -lコマンドを実行して確認します。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">arecord -l</span></span><br></pre></td></tr></table></figure>
+<p>カード番号：２<br>
+デバイス番号：０<br>
+と認識されていることがわかります。</p>
+<h1 id="Recording">Recording</h1>
+<hr>
+<p>以下コマンドで録音します。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arecord <span class="keyword">test</span>.wev</span><br></pre></td></tr></table></figure>
+<h1 id="Test">Test</h1>
+<p>録音ファイルを再生して、音声を確認します。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aplay <span class="keyword">test</span>.wav</span><br></pre></td></tr></table></figure>
+<h1 id="音声ボリューム">音声ボリューム</h1>
+<p>［F4キー］を押して録音の設定画面に切り替えます。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">alsamixer</span></span><br></pre></td></tr></table></figure>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-01-12T10:59:06.000Z" title="1/12/2025, 7:59:06 PM">2025-01-12</time>に投稿</span><span class="level-item"><time dateTime="2025-01-12T11:12:23.701Z" title="1/12/2025, 8:12:23 PM">2025-01-12</time>に更新</span><span class="level-item"><a class="link-muted" href="categories/Raspebrry-Pi/">Raspebrry-Pi</a></span><span class="level-item">3分で読む (約441語)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="2025/01/12/Raspberry-Pi%E3%81%A7Bluetooth%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%92%E9%B3%B4%E3%82%89%E3%81%99/">Raspberry PiでBluetoothスピーカーを鳴らす</a></p><div class="content"><p>This text is also text! <!-- New line here... --></p>
 <h1 id="Preparation">Preparation</h1>
 <hr>
 <p>Amazon.co.jpで買ったEWA A106というスピーカーです</p>
@@ -433,322 +453,9 @@ Bluetoothスピーカーをペアリングするためpulseaudioを起動しま�
 <h3 id="データ拡張"><strong>データ拡張</strong></h3>
 <h3 id="Early-Stopping"><strong>Early Stopping</strong></h3>
 <h3 id="バッチ正則化"><strong>バッチ正則化</strong></h3>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-12-28T11:26:50.000Z" title="12/28/2024, 8:26:50 PM">2024-12-28</time>に投稿</span><span class="level-item"><time dateTime="2024-12-31T03:30:49.884Z" title="12/31/2024, 12:30:49 PM">2024-12-31</time>に更新</span><span class="level-item"><a class="link-muted" href="categories/ML/">ML</a><span> / </span><a class="link-muted" href="categories/ML/Cnn/">Cnn</a></span><span class="level-item">5分で読む (約722語)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="2024/12/28/basic-cnn-models/">basic-cnn-models</a></p><div class="content"><h1 id="Dataset"><strong>Dataset</strong></h1>
-<h2 id="画像">画像</h2>
-<ul>
-<li>MNIST</li>
-<li>ImageNet</li>
-<li>COCO2017</li>
-<li>Cityscapes</li>
-<li>KITTI</li>
-<li>nuScenes</li>
-<li>Megaface</li>
-<li>WaymoOpen</li>
-</ul>
-<h2 id="音声">音声</h2>
-<ul>
-<li>LibriSpeech</li>
-<li>AudioSet</li>
-<li>Common Voice</li>
-</ul>
-<h1 id="Early-models"><strong>Early models</strong></h1>
-<table>
-<thead>
-<tr>
-<th>モデル</th>
-<th>発表年</th>
-<th>学会または発表場所</th>
-<th>論文タイトル</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AlexNet</td>
-<td>2012</td>
-<td>NIPS 2012 (現NeurIPS)</td>
-<td>ImageNet Classification with Deep Convolutional Neural Networks</td>
-<td><a target="_blank" rel="noopener" href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks">AlexNet</a></td>
-</tr>
-<tr>
-<td>VGG16</td>
-<td>2014</td>
-<td>arXiv (未発表)</td>
-<td>Very Deep Convolutional Networks for Large-Scale Image Recognition</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1409.1556">VGG16</a></td>
-</tr>
-<tr>
-<td>GoogLeNet</td>
-<td>2014</td>
-<td>CVPR 2015 (2014年発表)</td>
-<td>Going Deeper with Convolutions</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1409.4842">GoogLeNet</a></td>
-</tr>
-<tr>
-<td>ResNet</td>
-<td>2015</td>
-<td>CVPR 2016 (2015年発表)</td>
-<td>Deep Residual Learning for Image Recognition</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1512.03385">ResNet</a></td>
-</tr>
-<tr>
-<td>DenseNet</td>
-<td>2016</td>
-<td>CVPR 2017 (2016年発表)</td>
-<td>Densely Connected Convolutional Networks</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1608.06993">DenseNet</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="Application-models">Application models</h1>
-<h2 id="Detection">Detection</h2>
-<table>
-<thead>
-<tr>
-<th>論文名</th>
-<th>発表時間</th>
-<th>発表者</th>
-<th>発表組織</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>R-CNN</td>
-<td>2013/11</td>
-<td>Ross Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik</td>
-<td>UC Berkeley</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1311.2524">link</a></td>
-</tr>
-<tr>
-<td>Fast R-CNN</td>
-<td>2015/04</td>
-<td>Ross Girshick</td>
-<td>Microsoft Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1504.08083">link</a></td>
-</tr>
-<tr>
-<td>Faster R-CNN</td>
-<td>2015/06</td>
-<td>Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun</td>
-<td>Microsoft Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1506.01497">link</a></td>
-</tr>
-<tr>
-<td>YOLO</td>
-<td>2015/06</td>
-<td>Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi</td>
-<td>University of Washington, Allen Institute for AI</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1506.02640">link</a></td>
-</tr>
-<tr>
-<td>SSD</td>
-<td>2015/12</td>
-<td>Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-Yang Fu, Alexander C. Berg</td>
-<td>Google Research, University of North Carolina, Chapel Hill</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1512.02325">link</a></td>
-</tr>
-<tr>
-<td>RetinaNet</td>
-<td>2017/08</td>
-<td>Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, Piotr Dollár</td>
-<td>Facebook AI Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1708.02002">link</a></td>
-</tr>
-<tr>
-<td>YOLOv3</td>
-<td>2018/4</td>
-<td>Joseph Redmon, Ali Farhadi</td>
-<td>University of Washington, Allen Institute for AI</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1804.02767">link</a></td>
-</tr>
-<tr>
-<td>CenterNet</td>
-<td>2019/05</td>
-<td>Xingyi Zhou, Dequan Wang, Philipp Krähenbühl</td>
-<td>UT Austin</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1904.07850">link</a></td>
-</tr>
-<tr>
-<td>YOLOv4</td>
-<td>2020/04</td>
-<td>Alexey Bochkovskiy, Chien-Yao Wang, Hong-Yuan Mark Liao</td>
-<td>Independent &amp; Academia Sinica</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2004.10934">link</a></td>
-</tr>
-<tr>
-<td>YOLOv5</td>
-<td>2020/10</td>
-<td>Ultralytics Team</td>
-<td>Ultralytics</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5">link</a></td>
-</tr>
-<tr>
-<td>EfficientDet</td>
-<td>2020/03</td>
-<td>Mingxing Tan, Ruoming Pang, Quoc V. Le</td>
-<td>Google Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1911.09070">link</a></td>
-</tr>
-<tr>
-<td>DETR</td>
-<td>2020/05</td>
-<td>Nicolas Carion, Francisco Massa, Gabriel Synnaeve, et al.</td>
-<td>Facebook AI Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2005.12872">link</a></td>
-</tr>
-<tr>
-<td>Deformable DETR</td>
-<td>2020/10</td>
-<td>Xiaohang Zeng, Xizhou Zhu, Yue Cao, et al.</td>
-<td>Microsoft Research Asia</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2010.04159">link</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Segmentation">Segmentation</h2>
-<table>
-<thead>
-<tr>
-<th>論文名</th>
-<th>発表時間</th>
-<th>発表者</th>
-<th>発表組織</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FCN</td>
-<td>2014/11</td>
-<td>Jonathan Long, Evan Shelhamer, Trevor Darrell</td>
-<td>UC Berkeley</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1411.4038">link</a></td>
-</tr>
-<tr>
-<td>U-Net</td>
-<td>2015/05</td>
-<td>Olaf Ronneberger, Philipp Fischer, Thomas Brox</td>
-<td>University of Freiburg</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1505.04597">link</a></td>
-</tr>
-<tr>
-<td>SegNet</td>
-<td>2015/11</td>
-<td>Vijay Badrinarayanan, Alex Kendall, Roberto Cipolla</td>
-<td>University of Cambridge</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1511.00561">link</a></td>
-</tr>
-<tr>
-<td>DeepLab</td>
-<td>2016/06</td>
-<td>Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, Alan L. Yuille</td>
-<td>Google DeepMind &amp; University of Maryland</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1606.00915">link</a></td>
-</tr>
-<tr>
-<td>PSPNet</td>
-<td>2016/12</td>
-<td>Hengshuang Zhao, Jianping Shi, Xiaojuan Qi, Xiaogang Wang, Jiaya Jia</td>
-<td>Chinese University of Hong Kong</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1612.01105">link</a></td>
-</tr>
-<tr>
-<td>Mask R-CNN</td>
-<td>2017/03</td>
-<td>Kaiming He, Georgia Gkioxari, Piotr Dollár, Ross Girshick</td>
-<td>Facebook AI Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1703.06870">link</a></td>
-</tr>
-<tr>
-<td>DeepLabv3</td>
-<td>2017/09</td>
-<td>Liang-Chieh Chen, George Papandreou, Florian Schroff, Hartwig Adam</td>
-<td>Google Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1706.05587">link</a></td>
-</tr>
-<tr>
-<td>Semantic FPN</td>
-<td>2018/02</td>
-<td>Xiaoxiao Li, Ross Girshick, Kaiming He, Piotr Dollár</td>
-<td>Facebook AI Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1901.02446">link</a></td>
-</tr>
-<tr>
-<td>DeepLabv3+</td>
-<td>2018/03</td>
-<td>Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, Hartwig Adam</td>
-<td>Google Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1802.02611">link</a></td>
-</tr>
-<tr>
-<td>HRNet</td>
-<td>2019/04</td>
-<td>Jingdong Wang, Ke Sun, Tianheng Cheng, Borui Jiang, Chaorui Deng, et al.</td>
-<td>Microsoft Research Asia</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1904.04514">link</a></td>
-</tr>
-<tr>
-<td>DETR</td>
-<td>2020/05</td>
-<td>Nicolas Carion, Francisco Massa, et al.</td>
-<td>Facebook AI Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2005.12872">link</a></td>
-</tr>
-<tr>
-<td>ViT (Vision Transformer)</td>
-<td>2020/06</td>
-<td>Alexey Dosovitskiy, Lucas Beyer, et al.</td>
-<td>Google Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2010.11929">link</a></td>
-</tr>
-<tr>
-<td>PointRend</td>
-<td>2020/03</td>
-<td>Alexander Kirillov, Yuxin Wu, Kaiming He, Ross Girshick</td>
-<td>Facebook AI Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1912.08193">link</a></td>
-</tr>
-<tr>
-<td>Swin Transformer</td>
-<td>2021/03</td>
-<td>Ze Liu, Yutong Lin, Yue Cao, et al.</td>
-<td>Microsoft Research Asia</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.14030">link</a></td>
-</tr>
-<tr>
-<td>SegFormer</td>
-<td>2021/06</td>
-<td>Enze Xie, Wenhai Wang, Zhiding Yu, Anima Anandkumar, Jose M. Alvarez, Ping Luo</td>
-<td>CUHK &amp; NVIDIA Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2105.15203">link</a></td>
-</tr>
-<tr>
-<td>Swin-UNet</td>
-<td>2021/07</td>
-<td>Hu Cao, Yue Cao, Zheng Zhang, Ming-Hsuan Yang, Ran He, Jian Yang</td>
-<td>Nanjing University of Science and Technology</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2105.05537">link</a></td>
-</tr>
-<tr>
-<td>MaskFormer</td>
-<td>2021/10</td>
-<td>Bowen Cheng, Alex Schwing, Alexander Kirillov</td>
-<td>Facebook AI Research</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2107.06278">link</a></td>
-</tr>
-<tr>
-<td>Segment Anything</td>
-<td>2023/04</td>
-<td>Alexander Kirillov, Eric Mintun, et al.</td>
-<td>Meta AI</td>
-<td><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2304.02643">link</a></td>
-</tr>
-</tbody>
-</table>
 </div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="page/0/">前</a></div><div class="pagination-next"><a href="page/2/">次</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="">1</a></li><li><a class="pagination-link" href="page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="copperbean"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">copperbean</p><p class="is-size-6 is-block">Machine Learning
 Robotics
-</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Tokyo, Japan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">投稿</p><a href="/archives/"><p class="title">17</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">カテゴリ</p><a href="/categories/"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">タグ</p><a href="/tags/"><p class="title">1</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://copperbean51.github.io/" target="_blank" rel="me noopener">フォロー</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/copperbean51"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="index.html"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">カテゴリ</h3><ul class="menu-list"><li><a class="level is-mobile" href="categories/Edu/"><span class="level-start"><span class="level-item">Edu</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="categories/Edu/Math/"><span class="level-start"><span class="level-item">Math</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/ML/"><span class="level-start"><span class="level-item">ML</span></span><span class="level-end"><span class="level-item tag">6</span></span></a><ul><li><a class="level is-mobile" href="categories/ML/Cnn/"><span class="level-start"><span class="level-item">Cnn</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="categories/ML/Trans/"><span class="level-start"><span class="level-item">Trans</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="categories/ML/trans/"><span class="level-start"><span class="level-item">trans</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="categories/OS/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/Thinking/"><span class="level-start"><span class="level-item">Thinking</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="categories/Thinking/Math/"><span class="level-start"><span class="level-item">Math</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/Tools/"><span class="level-start"><span class="level-item">Tools</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="categories/Tools/Hexo/"><span class="level-start"><span class="level-item">Hexo</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="categories/Tools/Vscode/"><span class="level-start"><span class="level-item">Vscode</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">タグ</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="tags/BEV/"><span class="tag">BEV</span><span class="tag">3</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">購読メール</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="購読"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">広告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2248532189827018" data-ad-slot="7046095008" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="購読"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最近の記事</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-01-12T10:59:06.000Z">2025-01-12</time></p><p class="title"><a href="2025/01/12/Raspberry-Pi%E3%81%A7Bluetooth%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%92%E9%B3%B4%E3%82%89%E3%81%99/">Raspberry PiでBluetoothスピーカーを鳴らす</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-01-07T14:11:06.000Z">2025-01-07</time></p><p class="title"><a href="2025/01/07/%E5%AE%97%E6%95%99%E3%81%A8%E5%89%B5%E9%80%A0%E3%81%A8%E3%81%AE%E9%96%A2%E4%BF%82/">宗教と創造との関係</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-12-31T03:36:43.000Z">2024-12-31</time></p><p class="title"><a href="2024/12/31/linux-kernel/">linux-kernel</a></p><p class="categories"><a href="categories/OS/">OS</a> / <a href="categories/OS/Linux/">Linux</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-12-31T02:33:27.000Z">2024-12-31</time></p><p class="title"><a href="2024/12/31/edu-math/">edu-math</a></p><p class="categories"><a href="categories/Edu/">Edu</a> / <a href="categories/Edu/Math/">Math</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-12-31T02:02:03.000Z">2024-12-31</time></p><p class="title"><a href="2024/12/31/devcon-mmdet3d/">devcon-mmdet3d</a></p><p class="categories"><a href="categories/Tools/">Tools</a> / <a href="categories/Tools/Vscode/">Vscode</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">アーカイブ</h3><ul class="menu-list"><li><a class="level is-mobile" href="archives/2025/01/"><span class="level-start"><span class="level-item">1月 2025</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="archives/2024/12/"><span class="level-start"><span class="level-item">12月 2024</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="index.html"><img src="/img/logo.png" alt="Copperbean" height="28"></a><p class="is-size-7"><span>&copy; 2025 copperbean</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("ja");</script><script>var IcarusThemeSettings = {
+</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Tokyo, Japan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">投稿</p><a href="/archives/"><p class="title">18</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">カテゴリ</p><a href="/categories/"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">タグ</p><a href="/tags/"><p class="title">1</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://copperbean51.github.io/" target="_blank" rel="me noopener">フォロー</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/copperbean51"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="index.html"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">カテゴリ</h3><ul class="menu-list"><li><a class="level is-mobile" href="categories/Edu/"><span class="level-start"><span class="level-item">Edu</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="categories/Edu/Math/"><span class="level-start"><span class="level-item">Math</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/ML/"><span class="level-start"><span class="level-item">ML</span></span><span class="level-end"><span class="level-item tag">6</span></span></a><ul><li><a class="level is-mobile" href="categories/ML/Cnn/"><span class="level-start"><span class="level-item">Cnn</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="categories/ML/Trans/"><span class="level-start"><span class="level-item">Trans</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="categories/ML/trans/"><span class="level-start"><span class="level-item">trans</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/OS/"><span class="level-start"><span class="level-item">OS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="categories/OS/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/Raspebrry-Pi/"><span class="level-start"><span class="level-item">Raspebrry-Pi</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="categories/Thinking/"><span class="level-start"><span class="level-item">Thinking</span></span><span class="level-end"><span class="level-item tag">2</span></span></a><ul><li><a class="level is-mobile" href="categories/Thinking/Math/"><span class="level-start"><span class="level-item">Math</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li><li><a class="level is-mobile" href="categories/Tools/"><span class="level-start"><span class="level-item">Tools</span></span><span class="level-end"><span class="level-item tag">5</span></span></a><ul><li><a class="level is-mobile" href="categories/Tools/Hexo/"><span class="level-start"><span class="level-item">Hexo</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="categories/Tools/Vscode/"><span class="level-start"><span class="level-item">Vscode</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">タグ</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="tags/BEV/"><span class="tag">BEV</span><span class="tag">3</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">購読メール</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="購読"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">広告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2248532189827018" data-ad-slot="7046095008" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="購読"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最近の記事</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-01-12T11:14:38.000Z">2025-01-12</time></p><p class="title"><a href="2025/01/12/Raspberry-Pi%E3%81%A7USB%E3%83%9E%E3%82%A4%E3%82%AF%E3%82%92%E5%8F%96%E3%82%8A%E4%BB%98%E3%81%91%E3%81%A6%E9%9F%B3%E5%A3%B0%E3%82%92%E9%8C%B2%E9%9F%B3%E3%81%95%E3%81%9B%E3%82%8B/">Raspberry PiでUSBマイクを取り付けて音声を録音させる</a></p><p class="categories"><a href="categories/Raspebrry-Pi/">Raspebrry-Pi</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-01-12T10:59:06.000Z">2025-01-12</time></p><p class="title"><a href="2025/01/12/Raspberry-Pi%E3%81%A7Bluetooth%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%92%E9%B3%B4%E3%82%89%E3%81%99/">Raspberry PiでBluetoothスピーカーを鳴らす</a></p><p class="categories"><a href="categories/Raspebrry-Pi/">Raspebrry-Pi</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-01-07T14:11:06.000Z">2025-01-07</time></p><p class="title"><a href="2025/01/07/%E5%AE%97%E6%95%99%E3%81%A8%E5%89%B5%E9%80%A0%E3%81%A8%E3%81%AE%E9%96%A2%E4%BF%82/">宗教と創造との関係</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-12-31T03:36:43.000Z">2024-12-31</time></p><p class="title"><a href="2024/12/31/linux-kernel/">linux-kernel</a></p><p class="categories"><a href="categories/OS/">OS</a> / <a href="categories/OS/Linux/">Linux</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-12-31T02:33:27.000Z">2024-12-31</time></p><p class="title"><a href="2024/12/31/edu-math/">edu-math</a></p><p class="categories"><a href="categories/Edu/">Edu</a> / <a href="categories/Edu/Math/">Math</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">アーカイブ</h3><ul class="menu-list"><li><a class="level is-mobile" href="archives/2025/01/"><span class="level-start"><span class="level-item">1月 2025</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="archives/2024/12/"><span class="level-start"><span class="level-item">12月 2024</span></span><span class="level-end"><span class="level-item tag">15</span></span></a></li></ul></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="index.html"><img src="/img/logo.png" alt="Copperbean" height="28"></a><p class="is-size-7"><span>&copy; 2025 copperbean</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("ja");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,

@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>https://copperbean51.github.io/categories/Raspebrry-Pi/</loc>
+        <lastmod>2025-01-12T11:20:42.441Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://copperbean51.github.io/categories/OS/Linux/</loc>
         <lastmod>2024-12-31T03:54:54.569Z</lastmod>
         <changefreq>weekly</changefreq>
